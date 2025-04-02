@@ -7,7 +7,8 @@ class TestCal(TestCase):
         self.c1=test.Calculator(6,12)
         self.c2=test.Calculator(-1,-1)
         self.c3=test.Calculator(-1,1)
-
+    def tearDown(self): #run after test
+        print("pass")
     def test_add(self):
 
         self.assertEqual(18, self.c1.add())
