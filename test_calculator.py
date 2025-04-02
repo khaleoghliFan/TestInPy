@@ -6,20 +6,32 @@ class TestCal(TestCase):
 
     def test_add(self):
         c = test.Calculator(5, 2)
-        result=c.add()
-        self.assertEqual(7,result)
+        p = test.Calculator(-1, -1)
+        q = test.Calculator(1, -1)
+        self.assertEqual(7, c.add())
+        self.assertEqual(-2, p.add())
+        self.assertEqual(0, q.add())
     def test_subtract(self):
         p=test.Calculator(6,12)
-        result=p.subtract()
-        self.assertEqual(-6,result)
+        c = test.Calculator(-1, -1)
+        q = test.Calculator(1, -1)
+        self.assertEqual(-6,p.subtract())
+        self.assertEqual(0, c.subtract())
+        self.assertEqual(2, q.subtract())
     def test_divide(self):
         d=test.Calculator(12,6)
-        result=d.divide()
-        self.assertEqual(2,result)
+        c = test.Calculator(-1, -1)
+        q = test.Calculator(1, -1)
+        self.assertEqual(2, d.divide())
+        self.assertEqual(1, c.divide())
+        self.assertEqual(-1, q.divide())
     def test_multiply(self):
         d=test.Calculator(12,6)
-        result=d.multiply()
-        self.assertEqual(72,result)
+        c = test.Calculator(-1, -1)
+        q = test.Calculator(1, -1)
+        self.assertEqual(72, d.multiply())
+        self.assertEqual(1, c.multiply())
+        self.assertEqual(-1, q.multiply())
 
 
 if __name__=="__main()__":
